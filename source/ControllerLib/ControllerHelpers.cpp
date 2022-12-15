@@ -22,6 +22,16 @@ bool DoesControllerSupport(ControllerType type, ControllerSupport supportType)
         default:
             return false;
         }
+    case CONTROLLER_LOGITECH:
+        switch (supportType)
+        {
+        case SUPPORTS_RUMBLE:
+            return true;
+        case SUPPORTS_BLUETOOTH:
+            return true;
+        default:
+            return false;
+        }
     case CONTROLLER_XBOXONEW:
         if (supportType == SUPPORTS_NOTHING)
             return true;
