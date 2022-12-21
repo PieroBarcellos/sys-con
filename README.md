@@ -4,7 +4,8 @@
 ###### \[Switch FW 5.0.0+\] [Atmosphère only]
 
 ## UPDATE
-Logitech Steering Wheels (G920), when connected on Switch dock (USB), are recognized with a XboxOne Controller. In this fork, I tried add some Logiteck SDK files, but I can't compile (problems with DevKitPro and Atmosphere Lib in mu PC - something I did wrong). If you can compile the files, call me.
+Logitech Steering Wheels (G920), when connected on Switch dock (USB), are recognized with a XboxOne Controller. In this fork, I tried add some Logiteck SDK files, but I can't compile (problems with DevKitPro and Atmosphere Lib in my PC - something I did wrong). If you can compile the files, call me.
+More about this here: https://github.com/cathery/sys-con/issues/308
 
 
 
