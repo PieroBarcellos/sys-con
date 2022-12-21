@@ -217,6 +217,13 @@ namespace syscon::config
         else
             WriteToLog("Failed to read from xbox one config!");
 
+        if (R_SUCCEEDED(ReadFromConfig(STEERINGWHEELSDKSIMPLECONFIG)))
+            SteeringWheelSDKSimple::LoadConfig(&tempConfig);
+        else
+            WriteToLog("Failed to read from logitech config!");
+
+
+
         if (R_SUCCEEDED(ReadFromConfig(XBOX360CONFIG)))
         {
             Xbox360Controller::LoadConfig(&tempConfig);
@@ -243,7 +250,9 @@ namespace syscon::config
         static u64 xbox360ConfigLastModified;
         static u64 xboxOneConfigLastModified;
         static u64 dualshock3ConfigLastModified;
-        static u64 dualshock4ConfigLastModified;
+        static u64 steeringWheelSDKSimpleConfigLastModified;
+
+
 
         // Maybe this should be called only once when initializing?
         // I left it here in case this would cause issues when ejecting the SD card
@@ -282,6 +291,14 @@ namespace syscon::config
                 xboxOneConfigLastModified = timestamp.modified;
                 filesChanged = true;
             }
+
+        if (R_SUCCEEDED(fsFsGetFileTimeStampRaw(fs, STEERINGWHEELSDKSIMPLE, &timestamp)))
+            if (steeringWheelSDKSimpleLastModified != timestamp.modified)
+            {
+                steeringWheelSDKSimpleConfigLastModified = timestamp.modified;
+                filesChanged = true;
+            }
+
 
         if (R_SUCCEEDED(fsFsGetFileTimeStampRaw(fs, DUALSHOCK3CONFIG, &timestamp)))
             if (dualshock3ConfigLastModified != timestamp.modified)

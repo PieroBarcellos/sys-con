@@ -9,6 +9,8 @@
 #define XBOXONECONFIG    CONFIG_PATH "config_xboxone.ini"
 #define DUALSHOCK3CONFIG CONFIG_PATH "config_dualshock3.ini"
 #define DUALSHOCK4CONFIG CONFIG_PATH "config_dualshock4.ini"
+#define STEERINGWHEELSDKSIMPLE CONFIG_PATH "config_steeringwheelsdksimple.ini"
+
 
 namespace syscon::config
 {
